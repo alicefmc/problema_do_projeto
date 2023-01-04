@@ -9,7 +9,8 @@ class Stone{
         this.y=y;
         this.h=h;
         this.w=w;
-        this.body=Bodies.rectangle(this.x,this.y,this.w,this.y,options)
+        this.body=Bodies.rectangle(this.x,this.y,this.w,this.h,options)
+                                                    //aqui é this.h
         World.add(world,this.body);
     }
     display()
@@ -21,7 +22,8 @@ class Stone{
         strokeWeight(4);
         stroke("gray")
         fill("black")
-        rect(stonepos.x,stonepos.y,this.w,this.h)
+        rect(0,0,this.w,this.h)
+            //aqui passamos 0 no lugar das posições pois já foram informadas no translate
         pop()
     }
 }

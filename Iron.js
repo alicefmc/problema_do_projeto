@@ -9,7 +9,8 @@ class Iron{
         this.y=y;
         this.h=h;
         this.w=w;
-        this.body=Bodies.rectangle(this.x,this.y,this.w,this.y,options)
+        this.body=Bodies.rectangle(this.x,this.y,this.w,this.h,options)
+                                                        //aqui é this.h
         World.add(world,this.body);
     }
     display()
@@ -21,7 +22,8 @@ class Iron{
         strokeWeight(4);
         stroke("darkblue")
         fill("gray")
-        rect(ironpos.x,ironpos.y,this.w,this.h)
+        rect(0,0,this.w,this.h)
+            //As posições já estão no translate, aqui fica 0
         pop()
     }
 }
